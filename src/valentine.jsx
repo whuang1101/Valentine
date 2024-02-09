@@ -14,7 +14,7 @@ function App() {
       'Definitely!',
     ]);
     const [yes, setYes] = useState(false)
-    const [noButton, setNoButton] = useState(15)
+    const [noButton, setNoButton] = useState(16)
     
     const [response, setResponse] = useState("Yes!")
     const increaseSize = () => {
@@ -22,7 +22,7 @@ function App() {
       const randomIndex = Math.floor(Math.random() * yesResponses.length);
       setResponse(yesResponses[randomIndex])
       if (noButton !== 0){
-        setNoButton(noButton => noButton -= 1)
+        setNoButton(noButton => noButton -= 2)
       }
     };
   
@@ -51,22 +51,26 @@ function App() {
       <div className='title-screen'>
         {!yes ?
         <>
-        <div style={{fontSize:"5em"}}>Be My Valentine?</div>
+        <div style={{display:"flex", alignItems:"center",justifyContent:"center",flexDirection:"column", gap:"2em"}}>
+          <div style={{fontSize:"3.5em"}}>Be My Valentine?</div>
 
-        <div style={{display:"flex", gap:"1em"}}>
-        <button style={{ padding: '10px', fontSize: `${buttonSize}px`, cursor: 'pointer', alignItems:"center", justifyContent:"center" }}
-        onClick={() => {setYes(true)}}>
-          {response}
-        </button>
-        <button onClick={increaseSize} style={{padding: `${noButton}px`, fontSize: `${noButton}px`, cursor: 'pointer', alignItems:"center", justifyContent:"center" }}>No</button>
+          <div style={{display:"flex", gap:"1em"}}>
+          <button style={{ padding: '10px', fontSize: `${buttonSize}px`, cursor: 'pointer', alignItems:"center", justifyContent:"center" }}
+          onClick={() => {setYes(true)}}>
+            {response}
+          </button>
+          <button onClick={increaseSize} style={{padding: `${noButton}px`, fontSize: `${noButton}px`, cursor: 'pointer', alignItems:"center", justifyContent:"center" }}>No</button>
+          </div>
         </div>
         {
           !loading &&
         <img src={data.data.images.downsized_medium.url} alt="valentine" style={{width:'10em', height:'10em'}} />}
         </>:
         <div>
-          <div style={{fontSize:"5em",display:"flex", alignItems:"center",justifyContent:"center"}}>YAYYYY!!!!</div>
-          <img src="https://gifdb.com/images/high/animated-bunny-tuzki-drawing-hearts-do4kc1culjz5q70q.gif" alt="" />
+          <div style={{display:"flex", alignItems:"center",justifyContent:"center", flexDirection:"column"}}>
+            <div style={{fontSize:"4em"}}>YAYY!!!! Currently drawing a picture for u!</div>
+            <img src="https://gifdb.com/images/high/animated-bunny-tuzki-drawing-hearts-do4kc1culjz5q70q.gif" alt="" style={{width:'15em', height:'15em'}} />
+          </div>
         </div>
       }
       </div>
