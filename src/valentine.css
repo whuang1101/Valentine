@@ -1,0 +1,15 @@
+*{
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
+.title-screen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 1em;
+    flex-direction: column;
+    background-image: url("https://wallpapers.com/images/hd/wallpaper-valentines-day-hearts-lots-fly-love-m7tt0svylhvxbrvn.jpg");
+    background-size: cover;
+}
