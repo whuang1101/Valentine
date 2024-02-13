@@ -68,7 +68,7 @@ function App() {
         </>:
         <div>
           <div style={{display:"flex", alignItems:"center",justifyContent:"center", flexDirection:"column"}}>
-            <div style={{fontSize:"4em"}}>YAYY!!!! Currently drawing a picture for u!</div>
+            <div style={{fontSize:"4em"}}>YAYY! Can't wait to see you :D</div>
             <img src="https://gifdb.com/images/high/animated-bunny-tuzki-drawing-hearts-do4kc1culjz5q70q.gif" alt="" style={{width:'15em', height:'15em'}} />
           </div>
         </div>
